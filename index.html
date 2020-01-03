@@ -1,6 +1,6 @@
 <!DOCTYPE html:5>
 <html lang="en">
-  <head>    
+  <head>
     <link href="index.css" rel="stylesheet" type="text/css" />
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -14,16 +14,15 @@
       href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
     />
     <script href="/index.css"></script>
-
   </head>
 
   <body>
-
-    
-    <link href="index.css" rel="stylesheet" type="text/css" />
+    <link href="/index.css" rel="stylesheet" type="text/css" />
     <script>
-        alert("Bienvenidos, tu ubicación está siendo registrada, una vez terminado el proceso el servicio GPS se reinicirá");
-//dot notation
+      alert(
+        "Bienvenidos, tu ubicación está siendo registrada, una vez terminado el proceso el servicio GPS se reinicirá"
+      );
+      //dot notation
       let d = new Date();
       document.body.innerHTML =
         "<h1>La hora en reportar el accidente es:  " +
@@ -35,7 +34,6 @@
       ("</h1>");
     </script>
 
-    
     <script>
       /**
        * Pruebas
@@ -108,10 +106,19 @@
 
       getLocation();
     </script>
+    
 
     <div id="resultado" class="text-success"></div>
 
     <div id="resultado2"></div>
+
+    <a
+      href="https://api.whatsapp.com/send?phone=50685134128&text=%20La%20Ubicación%20de%20mi%20accidente%20de%20tránsito%20es:"
+      class="whatsapp"
+      target="_blank"
+    >
+      <i class="fa fa-whatsapp whatsapp-icon"></i
+    ></a>
 
     <button type="button" onclick="getLocation()">Ejecutar de nuevo</button>
   </body>
