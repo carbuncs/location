@@ -1,6 +1,11 @@
 <!DOCTYPE html:5>
 <html lang="en">
-  <head>
+  <head>    
+    <link href="index.css" rel="stylesheet" type="text/css" />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Boleta Carbuncs:</title>
+
     <script type="text/javascript"></script>
     <meta charset="UTF-8" />
     <title>Geolocazación Test</title>
@@ -8,11 +13,29 @@
       rel="stylesheet"
       href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
     />
-    <script src="./index.css"></script>
+    <script href="/index.css"></script>
+
   </head>
 
   <body>
-    <button type="button" onclick="getLocation()">Prueba!</button>
+
+    
+    <link href="index.css" rel="stylesheet" type="text/css" />
+    <script>
+        alert("Bienvenidos, tu ubicación está siendo registrada, una vez terminado el proceso el servicio GPS se reinicirá");
+//dot notation
+      let d = new Date();
+      document.body.innerHTML =
+        "<h1>La hora en reportar el accidente es:  " +
+        d.getHours() +
+        ":" +
+        d.getMinutes() +
+        ":" +
+        d.getSeconds();
+      ("</h1>");
+    </script>
+
+    
     <script>
       /**
        * Pruebas
@@ -20,10 +43,6 @@
       var tuNumero = "50685134128";
       var tuMensaje =
         "La%20Ubicación%20de%20mi%20accidente%20de%20tránsito%20es:%20";
-      //var product =
-      //var servicio =
-      //var latitud = "9.8849394";
-      //var longitud = "-84.057388";
       var plus = ",+";
       var sumarweb = ", ";
       var addtext = "&text=%20";
@@ -51,6 +70,7 @@
           position.coords.latitude + sumarweb + position.coords.longitude;
 
         document.getElementById("resultado2").innerHTML = ubicaion;
+
         console.log("La Ubicación del cliente es:", ubicaion);
         console.log(
           head +
@@ -70,15 +90,29 @@
           position.coords.latitude +
           plus +
           position.coords.longitude;
+
         console.log("el texto de whaas", Textocompletow);
+
         //
 
         document.getElementById("resultado").innerHTML = Textocompletow;
+        document.getElementsByName("testi").value = Textocompletow;
+
+        console.log("url", resultado);
+        //document.body.innerHTML =
+        //"<h1>el mensaje a enviar es :  " + Textocompletow;
+        //("</h1>");
+
+        //document.getElementById("resultado3").href = Textocompletow;
       }
 
       getLocation();
     </script>
-    <div id="resultado"></div>
+
+    <div id="resultado" class="text-success"></div>
+
     <div id="resultado2"></div>
+
+    <button type="button" onclick="getLocation()">Ejecutar de nuevo</button>
   </body>
 </html>
