@@ -22,6 +22,22 @@
       alert(
         "Bienvenidos, tu ubicación está siendo registrada, una vez terminado el proceso el servicio GPS se reinicirá"
       );
+
+      var email = "";
+
+      function enviarser() {
+        var age = prompt("¿Cuál es tu dirección de correo electrónico ?");
+        alert("El correo de User es " + age);
+        if (age == "carbuncsgocr@gmail.com") {
+          console.log("Hola Maestro");
+        } else {
+          console.log("Hola Usuario");
+          email = age;
+          console.log("correo es", email);
+        }
+      }
+
+      enviarser();
       //dot notation
       let d = new Date();
       document.body.innerHTML =
@@ -33,7 +49,7 @@
         d.getSeconds();
       ("</h1>");
 
-      console.log("La hora: ", Date);
+      console.log("La hora: ", d);
     </script>
 
     <h1>Copiar el siguiente link y abirlo en cualquier navegador web</h1>
@@ -48,6 +64,10 @@
       var plus = ",+";
       var sumarweb = ", ";
       var addtext = "&text=%20";
+      var espacio = "%20";
+      var textocorreom = "%20mi%20dirección%20de%correo%20electrónico%20es:";
+      var texcedula = "%20mi%20número%20de%20cédula%o%20pasaporte%20es";
+      var texvehiculo = "%20La%20placa%de%20mi%20vehículo%20es:";
       //var message = message.split(" ").join("%20");
       var head = "https://api.whatsapp.com/send?phone=";
 
@@ -91,16 +111,19 @@
           tuMensaje +
           position.coords.latitude +
           plus +
-          position.coords.longitude;
+          position.coords.longitude +
+          espacio +
+          textocorreom +
+          email +
+          texcedula;
 
         console.log("el texto de whaas", Textocompletow);
 
         //
 
         document.getElementById("resultado").innerHTML = Textocompletow;
-        document.getElementsByName("testi").value = Textocompletow;
+        document.getElementsByName("resultado").value = Textocompletow;
 
-        console.log("url", resultado);
         //document.body.innerHTML =
         //"<h1>el mensaje a enviar es :  " + Textocompletow;
         //("</h1>");
@@ -114,16 +137,23 @@
     <div id="resultado" class="text-success"></div>
 
     <h1>Copiar los siguientes numeros y abrir con cualquier app de mapas</h1>
+    <div></div>
 
     <div id="resultado2"></div>
-
-    <a
-      href="https://api.whatsapp.com/send?phone=50685134128&text=%20La%20Ubicación%20de%20mi%20accidente%20de%20tránsito%20es:"
-      target="_blank"
-    >
-      <i class="fa fa-whatsapp whatsapp-icon"></i
-    ></a>
+    <h1>Tú correo es:</h1>
+    <div id="correo"></div>
 
     <button type="button" onclick="getLocation()">Ejecutar de nuevo</button>
+
+    <button onclick="myFunction()">Try it</button>
+
+    <script>
+      function myFunction() {
+        var x = document.createElement("href");
+        var t = document.createTextNode("resultado");
+        x.appendChild(t);
+        document.body.appendChild(x);
+      }
+    </script>
   </body>
 </html>
